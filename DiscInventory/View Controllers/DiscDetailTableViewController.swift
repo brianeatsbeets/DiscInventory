@@ -5,6 +5,8 @@
 //  Created by Aguirre, Brian P. on 3/9/22.
 //
 
+// TODO: Allow manual adjustment of disc image to fit into frame
+
 // MARK: - Imported libraries
 
 import UIKit
