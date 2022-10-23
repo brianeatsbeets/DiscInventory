@@ -29,6 +29,7 @@ final class DiscTableViewModelTests: XCTestCase {
     
     // Deinitialize the SUT
     override func tearDownWithError() throws {
+        Disc.saveDiscs([])
         sut = nil
         try super.tearDownWithError()
     }
@@ -46,6 +47,7 @@ final class DiscTableViewModelTests: XCTestCase {
         
         // Then
         XCTAssertEqual(sut.discs, [disc], "Result does not match provided disc array")
+        XCTAssertEqual(sut.discs.count, 1, "Result does not match expected number of discs")
     }
     
     // Test updating a disc
@@ -60,6 +62,7 @@ final class DiscTableViewModelTests: XCTestCase {
         
         // Then
         XCTAssertEqual(sut.discs, [newDisc], "Result does not match updated disc")
+        XCTAssertEqual(sut.discs.count, 1, "Result does not match expected number of discs")
     }
     
     // Test adding a disc
@@ -74,6 +77,7 @@ final class DiscTableViewModelTests: XCTestCase {
         
         // Then
         XCTAssertEqual(sut.discs, [disc, newDisc], "Result does not match disc array with added disc")
+        XCTAssertEqual(sut.discs.count, 2, "Result does not match expected number of discs")
     }
     
     // Test removing a disc
@@ -88,6 +92,7 @@ final class DiscTableViewModelTests: XCTestCase {
         
         // Then
         XCTAssertEqual(sut.discs, [discTwo], "Result does not match disc array with removed disc")
+        XCTAssertEqual(sut.discs.count, 1, "Result does not match expected number of discs")
     }
     
     // Test togging a disc's 'In Bag' value
@@ -100,7 +105,7 @@ final class DiscTableViewModelTests: XCTestCase {
         sut.toggleInBag(atRow: 0)
         
         // Then
-        XCTAssertEqual(sut.discs[0].inBag, false, "Result does not match expected boolean value")
+        XCTAssertFalse(sut.discs[0].inBag, "Result does not match expected boolean value")
     }
     
     // TODO: Test writing to file system?

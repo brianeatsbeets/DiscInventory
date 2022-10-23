@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E1469E9B28F9F6B200A12E31 /* DiscTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1469E9A28F9F6B200A12E31 /* DiscTableViewModelTests.swift */; };
 		E1469EA228FB193400A12E31 /* DiscViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1469EA128FB193400A12E31 /* DiscViewModelTests.swift */; };
+		E14CAF4C290585EA0036E6EF /* DiscTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CAF4B290585EA0036E6EF /* DiscTests.swift */; };
 		E1D4883B28F83C57002D3F1D /* DiscTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D4883A28F83C57002D3F1D /* DiscTableViewModel.swift */; };
 		E1D4883D28F84A25002D3F1D /* DiscViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D4883C28F84A25002D3F1D /* DiscViewModel.swift */; };
 		E1D4883F28F8567D002D3F1D /* UtilityTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D4883E28F8567D002D3F1D /* UtilityTextViewModel.swift */; };
@@ -37,6 +38,7 @@
 		E1469E9828F9F6B200A12E31 /* DiscInventoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscInventoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1469E9A28F9F6B200A12E31 /* DiscTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscTableViewModelTests.swift; sourceTree = "<group>"; };
 		E1469EA128FB193400A12E31 /* DiscViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscViewModelTests.swift; sourceTree = "<group>"; };
+		E14CAF4B290585EA0036E6EF /* DiscTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscTests.swift; sourceTree = "<group>"; };
 		E1D4883A28F83C57002D3F1D /* DiscTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscTableViewModel.swift; sourceTree = "<group>"; };
 		E1D4883C28F84A25002D3F1D /* DiscViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscViewModel.swift; sourceTree = "<group>"; };
 		E1D4883E28F8567D002D3F1D /* UtilityTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityTextViewModel.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		E1469E9928F9F6B200A12E31 /* DiscInventoryTests */ = {
 			isa = PBXGroup;
 			children = (
+				E14CAF4B290585EA0036E6EF /* DiscTests.swift */,
 				E1469EA128FB193400A12E31 /* DiscViewModelTests.swift */,
 				E1469E9A28F9F6B200A12E31 /* DiscTableViewModelTests.swift */,
 			);
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E14CAF4C290585EA0036E6EF /* DiscTests.swift in Sources */,
 				E1469EA228FB193400A12E31 /* DiscViewModelTests.swift in Sources */,
 				E1469E9B28F9F6B200A12E31 /* DiscTableViewModelTests.swift in Sources */,
 			);
