@@ -38,7 +38,7 @@ final class DiscTableViewModelTests: XCTestCase {
     // Test the loading of discs from file into the model
     func testLoadDiscs() {
         // Given
-        let disc = Disc(name: "Aviar", color: .black, type: .putter, manufacturer: "Innova", plastic: "DX", weightInGrams: 175, speed: 2, glide: 3, turn: 0, fade: 1, condition: .great, notes: "", inBag: true)
+        let disc = createAvairDisc()
         Disc.saveDiscs([disc])
         
         // When
@@ -51,11 +51,11 @@ final class DiscTableViewModelTests: XCTestCase {
     // Test updating a disc
     func testUpdateDisc() {
         // Given
-        let disc = Disc(name: "Aviar", color: .black, type: .putter, manufacturer: "Innova", plastic: "DX", weightInGrams: 175, speed: 2, glide: 3, turn: 0, fade: 1, condition: .great, notes: "", inBag: true)
+        let disc = createAvairDisc()
         sut.discs = [disc]
         
         // When
-        let newDisc = Disc(name: "Wraith", color: .white, type: .distance, manufacturer: "Innova", plastic: "Champion", weightInGrams: 171, speed: 11, glide: 5, turn: -3, fade: 3, condition: .good, notes: "Favorite disc", inBag: true)
+        let newDisc = createWraithDisc()
         sut.updateDisc(at: 0, with: newDisc)
         
         // Then
@@ -65,11 +65,11 @@ final class DiscTableViewModelTests: XCTestCase {
     // Test adding a disc
     func testAddDisc() {
         // Given
-        let disc = Disc(name: "Aviar", color: .black, type: .putter, manufacturer: "Innova", plastic: "DX", weightInGrams: 175, speed: 2, glide: 3, turn: 0, fade: 1, condition: .great, notes: "", inBag: true)
+        let disc = createAvairDisc()
         sut.discs = [disc]
         
         // When
-        let newDisc = Disc(name: "Wraith", color: .white, type: .distance, manufacturer: "Innova", plastic: "Champion", weightInGrams: 171, speed: 11, glide: 5, turn: -3, fade: 3, condition: .good, notes: "Favorite disc", inBag: true)
+        let newDisc = createWraithDisc()
         sut.addDisc(newDisc)
         
         // Then
@@ -79,8 +79,8 @@ final class DiscTableViewModelTests: XCTestCase {
     // Test removing a disc
     func testRemoveDisc() {
         // Given
-        let discOne = Disc(name: "Aviar", color: .black, type: .putter, manufacturer: "Innova", plastic: "DX", weightInGrams: 175, speed: 2, glide: 3, turn: 0, fade: 1, condition: .great, notes: "", inBag: true)
-        let discTwo = Disc(name: "Wraith", color: .white, type: .distance, manufacturer: "Innova", plastic: "Champion", weightInGrams: 171, speed: 11, glide: 5, turn: -3, fade: 3, condition: .good, notes: "Favorite disc", inBag: true)
+        let discOne = createAvairDisc()
+        let discTwo = createWraithDisc()
         sut.discs = [discOne, discTwo]
         
         // When
@@ -93,7 +93,7 @@ final class DiscTableViewModelTests: XCTestCase {
     // Test togging a disc's 'In Bag' value
     func testToggleInBag() {
         // Given
-        let disc = Disc(name: "Aviar", color: .black, type: .putter, manufacturer: "Innova", plastic: "DX", weightInGrams: 175, speed: 2, glide: 3, turn: 0, fade: 1, condition: .great, notes: "", inBag: true)
+        let disc = createAvairDisc()
         sut.discs = [disc]
         
         // When
@@ -104,17 +104,30 @@ final class DiscTableViewModelTests: XCTestCase {
     }
     
     // TODO: Test writing to file system?
-//    // Test saving discs
-//    func testSaveDiscs() {
-//        // Given
-//        let discOne = Disc(name: "Aviar", color: .black, type: .putter, manufacturer: "Innova", plastic: "DX", weightInGrams: 175, speed: 2, glide: 3, turn: 0, fade: 1, condition: .great, notes: "", inBag: true)
-//        let discTwo = Disc(name: "Wraith", color: .white, type: .distance, manufacturer: "Innova", plastic: "Champion", weightInGrams: 171, speed: 11, glide: 5, turn: -3, fade: 3, condition: .good, notes: "Favorite disc", inBag: true)
-//        sut.discs = [discOne, discTwo]
-//
-//        // When
-//        sut.saveDiscs()
-//
-//        // Then
-//
-//    }
+    //    // Test saving discs
+    //    func testSaveDiscs() {
+    //        // Given
+    //        let discOne = Disc(name: "Aviar", color: .black, type: .putter, manufacturer: "Innova", plastic: "DX", weightInGrams: 175, speed: 2, glide: 3, turn: 0, fade: 1, condition: .great, notes: "", inBag: true)
+    //        let discTwo = Disc(name: "Wraith", color: .white, type: .distance, manufacturer: "Innova", plastic: "Champion", weightInGrams: 171, speed: 11, glide: 5, turn: -3, fade: 3, condition: .good, notes: "Favorite disc", inBag: true)
+    //        sut.discs = [discOne, discTwo]
+    //
+    //        // When
+    //        sut.saveDiscs()
+    //
+    //        // Then
+    //
+    //    }
+        
+    //MARK: - Helper functions
+    
+    // Create and return a test disc
+    func createAvairDisc() -> Disc {
+        return Disc(name: "Aviar", color: .black, type: .putter, manufacturer: "Innova", plastic: "DX", weightInGrams: 175, speed: 2, glide: 3, turn: 0, fade: 1, condition: .great, notes: "", inBag: true)
+    }
+    
+    // Create and return a different test disc
+    func createWraithDisc() -> Disc {
+        return Disc(name: "Wraith", color: .white, type: .distance, manufacturer: "Innova", plastic: "Champion", weightInGrams: 171, speed: 11, glide: 5, turn: -3, fade: 3, condition: .good, notes: "Favorite disc", inBag: true)
+    }
+    
 }

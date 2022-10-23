@@ -43,7 +43,7 @@ final class DiscViewModelTests: XCTestCase {
         // When - N/A
         
         // Then
-        XCTAssertEqual(sut.disc, disc, "Result does not match provided disc")
+        XCTAssertEqual(sut.discForModel(), disc, "Result does not match provided disc")
     }
     
     // Test the discStatFormattedString function

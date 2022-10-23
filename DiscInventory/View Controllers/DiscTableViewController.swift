@@ -65,10 +65,10 @@ class DiscTableViewController: UITableViewController {
         if let discViewModel = sourceViewController.discViewModel {
             if let indexOfExistingDisc = tableView.indexPathForSelectedRow {
                 // Update existing row
-                discTableViewModel.updateDisc(at: indexOfExistingDisc.row, with: discViewModel.disc)
+                discTableViewModel.updateDisc(at: indexOfExistingDisc.row, with: discViewModel.discForModel())
             } else {
                 // Add new row
-                discTableViewModel.addDisc(discViewModel.disc)
+                discTableViewModel.addDisc(discViewModel.discForModel())
             }
         }
         

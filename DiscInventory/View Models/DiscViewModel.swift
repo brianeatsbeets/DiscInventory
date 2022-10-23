@@ -16,7 +16,7 @@ struct DiscViewModel {
     
     // MARK: Properties
     
-    var disc: Disc
+    private var disc: Disc
     
     var name: String {
         get {
@@ -168,6 +168,12 @@ struct DiscViewModel {
     
     init(disc: Disc) {
         self.disc = disc
+    }
+    
+    // MARK: - Utility functions
+    
+    func discForModel() -> Disc {
+        return disc
     }
 }
 
